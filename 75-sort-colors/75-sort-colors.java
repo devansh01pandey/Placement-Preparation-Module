@@ -32,16 +32,7 @@ class Solution {
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+// DUTCH NATIONAL FLAG ALGO.                
 //         var low = 0;
 //         var mid = 0;
 //         var high = nums.length-1;
@@ -72,13 +63,6 @@ class Solution {
 //         arr[first] = arr[second];
 //         arr[second] = temp;
 //     }
-    
-//     // private static void print(int nums[]) {
-//     //     for(int num : nums) 
-//     //     {
-//     //         System.out.print(nums+" ");
-//     //     }
-//     //     System.out.println();
-//     // }
+
 }
 }
