@@ -30,27 +30,39 @@ class GFG {
 
 class Solve {
     int[] findTwoElement(int arr[], int n) {
-        // code here
-         int xor=arr[0], x=0, y=0;
-        for(int i=1; i<n; i++)
-        xor^=arr[i];
-        for(int i=1; i<=n; i++)
-        xor^=i;
-        //get the rightmost bit in set_bit_no.
-       int set_bit_no = xor & ~(xor-1);
-       for(int i=0; i<n; i++){
-       if((arr[i] & set_bit_no) != 0)
-       x^=arr[i];
-       else
-       y^=arr[i];
-       }
-       for(int i=1; i<=n; i++){
-       if((set_bit_no & i) != 0 )
-       x^=i;
-       else
-       y^=i;
-       }
-       int count=0;
+        
+        int xor1;
+        int set_bit_no;
+        
+        // int res = 0;
+        int x= 0;
+        int y= 0;
+        
+        xor1 = arr[0];
+        for(int i =1;i<n;i++)
+            xor1 = xor1 ^ arr[i];
+        for(int i=1;i<=n;i++)
+            xor1 = xor1 ^ i;
+            
+        set_bit_no = xor1 &(~(xor1-1));
+        
+        for(int i =0;i<n;i++)
+        {
+            if((arr[i] & set_bit_no)!=0)
+                x = x ^ arr[i];
+            else
+                y = y^ arr[i];
+        }
+        for(int i =1;i<=n;i++)
+        {
+            if((i & set_bit_no)!=0)
+                x = x ^ i;
+            else
+                y = y ^ i;
+        }
+        
+            
+	   int count=0;
        for(int i=0; i<n; i++){
            if(y == arr[i])
            count++;
@@ -61,5 +73,7 @@ class Solve {
            y=temp;
        }
        return new int[]{y,x};
+        
+        
     }
 }
