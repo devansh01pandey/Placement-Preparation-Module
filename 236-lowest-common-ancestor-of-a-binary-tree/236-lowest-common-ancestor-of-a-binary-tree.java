@@ -16,7 +16,7 @@ class Solution {
         
         if(lca1 != null && lca2 != null) 
             return root;
-        else if(lca1 != null)
+        if(lca1 != null)
             return lca1;
         else
             return lca2;
