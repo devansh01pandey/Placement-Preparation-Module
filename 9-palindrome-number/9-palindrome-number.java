@@ -1,7 +1,7 @@
 class Solution {
     public boolean isPalindrome(int x) {
         if(x<0) return false;
-        // if(x<10) return true;
+        if(x<10) return true;
         int reverse = 0,target = x;
         while(x != 0){
             int digit = x % 10;
